@@ -30,8 +30,12 @@ export const TodoList = () => {
                 {todos.map((todo, inx) => {
                     return <li key={inx}>
                         <h3>{todo.title}</h3>
-                        {todo.done ? <p className={styles.done}>Done!</p> :
-                            <p className={styles.active}>Yet to be done!</p>}
+                        {todo.due < Date.now() ? <p className={styles.expired}>
+                            Todo Expired!
+                        </p> : <>
+                            {todo.done ? <p className={styles.done}>Done!</p> :
+                                <p className={styles.active}>Yet to be done!</p>}
+                        </>}
                         <p>{todo.description}</p>
                         <p>Due at : {(new Date(todo.due)).toString()}</p>
                         <button className={styles.delBtn}

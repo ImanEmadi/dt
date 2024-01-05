@@ -1,6 +1,6 @@
 import { Box, Button, Group, TextInput } from '@mantine/core';
 import { Todo } from '../../types/todo';
-import styles from './todo.module.css';
+// import styles from './todo.module.css';
 import { useForm } from '@mantine/form';
 import { DateTimePicker } from '@mantine/dates';
 import { useCallback, useEffect } from 'react';
@@ -15,9 +15,9 @@ export const TodoForm = () => {
             due: 0
         },
         validate: {
-            title: (value) => value.trim().length > 0,
-            description: (value) => value.trim().length > 0,
-            due: (value) => value > Date.now()
+            title: (value) => (value.trim().length > 5 ? null : 'Title should be more than 5 characters'),
+            description: (value) => (value.trim().length > 10 ? null : 'Description should be more than 10 characters'),
+            due: (value) => (value > Date.now() ? null : 'Selected date is already passed')
         }
     })
 

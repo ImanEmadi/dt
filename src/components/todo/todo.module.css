@@ -5,8 +5,6 @@
     padding-top: 15px;
 }
 
-
-
 .todoList {
     margin: 0;
     padding: 0;
@@ -23,22 +21,27 @@
     padding-bottom: 5px;
 }
 
-.delBtn {
-    background-color: var(--mantine-color-red-7);
+.delBtn, .doneBtn {
     display: inline-block;
     margin: 1px 5px;
+    margin-bottom: 10px;
+}
+
+.delBtn {
+    background-color: var(--mantine-color-red-7);
+
 }
 
 .doneBtn {
     background-color: var(--mantine-color-orange-7);
-    display: inline-block;
-    margin: 1px 5px;
+
 }
 
 .done, .active {
     display: block;
-    line-height: 30px;
+    line-height: 35px;
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -48,6 +51,13 @@
 
 .active {
     background-color: var(--mantine-color-blue-9);
+}
+
+.expired {
+    display: block;
+    line-height: 40px;
+    font-weight: bold;
+    background-color: var(--mantine-color-red-9);
 }
 
 
